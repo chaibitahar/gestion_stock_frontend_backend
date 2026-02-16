@@ -8,7 +8,7 @@ Backend : Node.js et Express.js.
 
 
 Base de données : MySQL avec l'ORM Sequelize.
-+1
+
 
 
 Frontend :  EJS et Vue.js.
@@ -37,7 +37,7 @@ historique_stock:id,quantitedechange
 
 
    membre:
-   -chaibi tahar
-   -tikinas adda 
-   -ilyes righi 
-   -kosseila boucellam
+   -chaibi tahar:https://github.com/chaibitahar/portfolio-num-rique-.git
+   -tikinas adda :https://github.com/tikinasadda/portefolio-num-rique.git
+   -ilyes righi :https://github.com/righiilyes9-coder/portfolio-num-rique.git
+   -kosseila boucellam:https://github.com/kosseila123-dev/portfolios-num-riques.git
