@@ -34,3 +34,10 @@ Produits : id, nom,description, quantite, prix.
 Utilisateurs & Rôles : Pour l'authentification et l'autorisation.
 fournisseur:id,nom,email
 historique_stock:id,quantitedechange
+
+
+   membre:
+   -chaibi tahar
+   -tikinas adda 
+   -ilyes righi 
+   -kosseila boucellam
