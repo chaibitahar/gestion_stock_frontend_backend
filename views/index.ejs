@@ -1,0 +1,94 @@
+<%- include('partials/header') %>
+
+<div class="container mt-4">
+
+    <% if (user) { %>
+        <div class="mb-4">
+            <h1>📊 Tableau de Bord</h1>
+            <p class="text-muted">Bienvenue, <%= user.prenom %>. Voici l'état de votre stock en temps réel.</p>
+        </div>
+
+        <div class="row g-4">
+            
+            <div class="col-md-3">
+                <div class="card text-white bg-primary h-100 shadow">
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <h5 class="card-title"><i class="fas fa-boxes me-2"></i>Produits</h5>
+                        <h2 class="display-4 fw-bold"><%= nbProduits %></h2>
+                        <small>Références en stock</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card text-white bg-success h-100 shadow">
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <h5 class="card-title"><i class="fas fa-dollar-sign me-2"></i>Valeur Totale</h5>
+                        <h2 class="display-6 fw-bold"><%= valeurStock %> $</h2>
+                        <small>Capital immobilisé</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card text-white bg-info h-100 shadow">
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <h5 class="card-title"><i class="fas fa-users me-2"></i>Utilisateurs</h5>
+                        <h2 class="display-4 fw-bold"><%= nbUtilisateurs %></h2>
+                        <small>Comptes actifs</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card text-white <%= alerteStock > 0 ? 'bg-danger' : 'bg-secondary' %> h-100 shadow">
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <h5 class="card-title"><i class="fas fa-exclamation-triangle me-2"></i>Stock Faible</h5>
+                        <h2 class="display-4 fw-bold"><%= alerteStock %></h2>
+                        <small>Produits à commander (< 5)</small>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-md-6">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5>📦 Gestion rapide</h5>
+                        <p>Ajoutez rapidement un nouveau produit au catalogue.</p>
+                        <a href="/produits/ajouter" class="btn btn-outline-primary">Ajouter un produit</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5>👥 Équipe</h5>
+                        <p>Gérez les accès et ajoutez de nouveaux collaborateurs.</p>
+                        <a href="/utilisateurs" class="btn btn-outline-info">Gérer les utilisateurs</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <% } else { %>
+        <div class="p-5 mb-4 bg-light rounded-3 shadow-sm text-center">
+            <div class="container-fluid py-5">
+                <h1 class="display-5 fw-bold text-primary">Gestion de Stock Pro</h1>
+                <p class="col-md-8 fs-4 mx-auto">
+                    Gérez vos produits, suivez vos stocks et analysez votre valeur en temps réel.
+                    Une solution simple et efficace pour votre entreprise.
+                </p>
+                <div class="mt-4">
+                    <i class="fas fa-cubes fa-5x text-secondary mb-4"></i>
+                </div>
+                <a href="/login" class="btn btn-primary btn-lg px-4 gap-3">Se connecter</a>
+            </div>
+        </div>
+    <% } %>
+
+</div>
+
+<%- include('partials/footer') %>

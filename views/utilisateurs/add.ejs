@@ -1,0 +1,41 @@
+<%- include('../partials/header') %>
+
+<div class="container mt-5">
+    <h2>Ajouter un nouvel utilisateur</h2>
+    
+    <form action="/utilisateurs/ajouter" method="POST" class="mt-4 col-md-6">
+        <div class="mb-3">
+            <label class="form-label">Nom</label>
+            <input type="text" name="nom" class="form-control" required>
+        </div>
+        
+        <div class="mb-3">
+            <label class="form-label">Prénom</label>
+            <input type="text" name="prenom" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input type="email" name="email" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Mot de passe</label>
+            <input type="password" name="motDePasse" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Rôle</label>
+            <select name="roleId" class="form-select">
+                <% roles.forEach(role => { %>
+                    <option value="<%= role.id %>"><%= role.nom %></option>
+                <% }) %>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-success">Enregistrer</button>
+        <a href="/utilisateurs" class="btn btn-secondary">Annuler</a>
+    </form>
+</div>
+
+<%- include('../partials/footer') %>
